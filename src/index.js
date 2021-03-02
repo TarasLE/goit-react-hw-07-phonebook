@@ -8,10 +8,10 @@ import store from './redux/phonebook/store'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
-    <Provider store={store.store}>
-        <PersistGate loading={'Loading'} persistor={store.persistor}>
-            <App />
-        </PersistGate>
+    <Provider store={store}>
+        {/* <PersistGate loading={'Loading'} persistor={store.persistor}> */}
+        <App />
+        {/* </PersistGate> */}
     </Provider>,
     document.querySelector('#root')
 )

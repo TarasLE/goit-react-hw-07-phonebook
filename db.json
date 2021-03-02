@@ -1,3 +1,20 @@
 {
-    "contacts": []
+  "contacts": [
+    {
+      "text": {
+        "id": "Xe0BmFaje",
+        "name": "taras",
+        "number": ""
+      },
+      "id": 1
+    },
+    {
+      "text": {
+        "id": "Zb4wdoqWg",
+        "name": "victor",
+        "number": ""
+      },
+      "id": 2
+    }
+  ]
 }

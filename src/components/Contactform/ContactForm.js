@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
-import phonebookAction from '../../redux/phonebook/phonebook-actions'
+import phonebookOperations from '../../redux/phonebook/phonebook-operations'
 import PropTypes from 'prop-types'
 import styles from './ContactForm.module.css'
 import shortid from 'shortid'
@@ -123,7 +123,7 @@ const mapStateToProps = (state) => ({
     contacts: state.contacts.items,
 })
 const mapDispatchToProps = (dispatch) => ({
-    addContact: (contact) => dispatch(phonebookAction.addContact(contact)),
+    addContact: (contact) => dispatch(phonebookOperations.addContact(contact)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm)

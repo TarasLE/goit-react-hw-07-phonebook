@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import phonebookAction from '../../redux/phonebook/phonebook-actions'
+import { changeFilter } from '../../redux/phonebook/phonebook-actions'
 import PropTypes from 'prop-types'
 import { CSSTransition } from 'react-transition-group'
 import styles from './Filter.module.css'
@@ -54,8 +54,7 @@ const mapStateToProps = (state) => ({
     value: state.contacts.filter,
 })
 const mapDispatchToProps = (dispatch) => ({
-    filter: (event) =>
-        dispatch(phonebookAction.changeFilter(event.currentTarget.value)),
+    filter: (event) => dispatch(changeFilter(event.currentTarget.value)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter)

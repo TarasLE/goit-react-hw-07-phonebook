@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Filter from '../Filter/Filter'
-import phonebookAction from '../../redux/phonebook/phonebook-actions'
+import phonebookOperations from '../../redux/phonebook/phonebook-operations'
 import PropTypes from 'prop-types'
 import styles from './ContactList.module.css'
 import './ContactList.css'
@@ -71,10 +71,10 @@ const mapStateToProps = ({ contacts: { filter, items } }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     deleteContact: (id) => {
-        dispatch(phonebookAction.deleteContact(id))
+        dispatch(phonebookOperations.deleteContact(id))
     },
     resetFilter: () => {
-        dispatch(phonebookAction.changeFilter(''))
+        dispatch(phonebookOperations.changeFilter(''))
     },
 })
 

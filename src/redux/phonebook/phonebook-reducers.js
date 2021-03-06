@@ -38,8 +38,12 @@ const loading = createReducer(false, {
     [fetchContactSuccess]: () => false,
     [fetchContactError]: () => false,
 })
+
+const error = createReducer(null, {})
+
 export default combineReducers({
     items,
     filter,
     loading,
+    error,
 })

@@ -6,9 +6,22 @@ import {
     deleteContactRequest,
     deleteContactSuccess,
     deleteContactError,
+    fetchContactRequest,
+    fetchContactSuccess,
+    fetchContactError,
 } from './phonebook-actions'
 
 axios.defaults.baseURL = 'http://localhost:4040'
+const fetchContacts = () => (dispatch) => {
+    dispatch(fetchContactRequest())
+    axios
+        .get('/contacts')
+        .then(({ data }) => dispatch(fetchContactSuccess(data)))
+        .catch((error) =>
+            // dispatch({ type: 'contact/addContactError', payload: error })
+            dispatch(fetchContactError(error))
+        )
+}
 
 const addContact = (contact) => (dispatch) => {
     // const newContact = { contact }
@@ -34,7 +47,7 @@ const deleteContact = (contactId) => (dispatch) => {
     axios
         .delete(`/contacts/${contactId}`)
         .then(() => dispatch(deleteContactSuccess(contactId)))
-        .catch((error) => dispatch(addContactError(error)))
+        .catch((error) => dispatch(deleteContactError(error)))
 }
 
-export default { addContact, deleteContact }
+export default { addContact, deleteContact, fetchContacts }

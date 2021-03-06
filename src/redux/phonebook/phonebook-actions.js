@@ -1,7 +1,11 @@
 import { createAction } from '@reduxjs/toolkit'
 // import axios from 'axios'
-
+// axios.get('/contacts').then((response) => response.data)
 // axios.defaults.baseURL = 'http://localhost:4040'
+
+export const fetchContactRequest = createAction('contact/fetchContactRequest')
+export const fetchContactSuccess = createAction('contact/fetchContactSuccess')
+export const fetchContactError = createAction('contact/fetchContactError')
 
 export const addContactRequest = createAction('contact/addContactRequest')
 export const addContactSuccess = createAction('contact/addContactSuccess')

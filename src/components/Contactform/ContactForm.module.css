@@ -16,6 +16,7 @@
 }
 
 .FormBtn {
+    transition-duration: 250ms;
     margin-top: 10px;
     height: 50px;
     background-color: rgba(232, 204, 45, 0.8);

@@ -21,9 +21,9 @@ function Filter({ contacts, value, filter }) {
         >
             <div className={styles.Container}>
                 <label className={styles.InputContainer}>
-                    <span className={styles.FilterHeader}>
+                    <h1 className={styles.FilterHeader}>
                         Find contacts by Name
-                    </span>
+                    </h1>
 
                     <input
                         type="text"

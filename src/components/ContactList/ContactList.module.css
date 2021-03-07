@@ -4,7 +4,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    background-color: #fff;
+    background-color: rgba(84, 228, 103, 0.5);
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -16,7 +16,16 @@
     display: flex;
     justify-content: space-between;
     border: black solid 1px;
-    background-color: rgba(232, 204, 45, 0.25);
+    background-color: rgb(250, 246, 225);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 5px;
+}
+
+.Contact:hover {
+    transform: scale(1.03);
+    background-color: rgb(19, 179, 214);
+    color: white;
+    /* cursor: zoom-in; */
 }
 
 ul {

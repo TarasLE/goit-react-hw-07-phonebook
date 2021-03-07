@@ -4,12 +4,8 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    background-color: rgba(84, 228, 103, 0.5);
     margin-top: 10px;
     margin-bottom: 10px;
-}
-.ListContainer {
-    background-color: rgba(84, 228, 103, 0.5);
 }
 .Contact {
     width: 100%;

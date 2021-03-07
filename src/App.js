@@ -8,6 +8,7 @@ import contactSelectors from './redux/phonebook/phonebook-selectors'
 import Loader from '../src/components/Loader/Loader'
 import Filter from './components/Filter/Filter'
 import styles from './App.module.css'
+import PropTypes from 'prop-types'
 import './App.css'
 
 class App extends Component {
@@ -50,6 +51,12 @@ class App extends Component {
             </div>
         )
     }
+}
+
+App.propTypes = {
+    contacts: PropTypes.array.isRequired,
+    isLoadingContats: PropTypes.bool.isRequired,
+    fetchContacts: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state) => ({

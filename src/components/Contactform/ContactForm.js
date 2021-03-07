@@ -6,6 +6,7 @@ import styles from './ContactForm.module.css'
 import shortid from 'shortid'
 import './ContactForm.css'
 import Notification from '../Notification/Notification'
+import PropTypes from 'prop-types'
 
 class ContactForm extends Component {
     state = {
@@ -67,7 +68,7 @@ class ContactForm extends Component {
     render() {
         return (
             <div className={styles.Container}>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>
                         Name <br />
                         <input
@@ -89,14 +90,11 @@ class ContactForm extends Component {
                             className={styles.FormInput}
                         />
                     </label>
+                    <button type="submit" className={styles.FormBtn}>
+                        Add contact
+                    </button>
                 </form>
-                <button
-                    type="button"
-                    onClick={this.handleSubmit}
-                    className={styles.FormBtn}
-                >
-                    Add contact
-                </button>
+
                 <CSSTransition
                     in={this.state.alert}
                     timeout={250}
@@ -119,6 +117,12 @@ class ContactForm extends Component {
         )
     }
 }
+
+ContactForm.propTypes = {
+    contacts: PropTypes.array.isRequired,
+    addContact: PropTypes.func.isRequired,
+}
+
 const mapStateToProps = (state) => ({
     contacts: state.contacts.items,
 })

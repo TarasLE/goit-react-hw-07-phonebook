@@ -16,10 +16,15 @@
 }
 
 .FormBtn {
+    width: 100%;
     transition-duration: 250ms;
     margin-top: 10px;
     height: 50px;
     background-color: rgba(232, 204, 45, 0.8);
+    /* margin-top: auto;
+    margin-bottom: auto; */
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 .FormBtn:hover {

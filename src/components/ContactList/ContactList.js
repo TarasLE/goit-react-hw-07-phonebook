@@ -69,7 +69,6 @@ ContactList.propTypes = {
 
 const mapStateToProps = (state) => ({
     filteredContacts: phonebookSelectors.getfilteredElements(state),
-    resetFilter: phonebookSelectors.getFilter(state),
     contacts: phonebookSelectors.getContacts(state),
 })
 

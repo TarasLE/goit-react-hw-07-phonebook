@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 
 Notification.propTypes = {
     sameContact: PropTypes.string.isRequired,
+    currentNumber: PropTypes.string.isRequired,
 }
 
 function Notification({ sameContact, currentNumber }) {

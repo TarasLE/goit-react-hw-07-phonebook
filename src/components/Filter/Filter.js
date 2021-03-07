@@ -40,14 +40,7 @@ function Filter({ contacts, value, filter }) {
 Filter.propTypes = {
     value: PropTypes.string.isRequired,
     filter: PropTypes.func.isRequired,
-}
-
-const resetFilter = (state) => {
-    if (state.length == 2) {
-        return ''
-    } else {
-        return state.contacts.filter
-    }
+    contacts: PropTypes.array.isRequired,
 }
 
 const mapStateToProps = (state) => ({

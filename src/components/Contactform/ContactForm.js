@@ -9,7 +9,9 @@ import './ContactForm.css'
 import Notification from '../Notification/Notification'
 
 class ContactForm extends Component {
-    static propTypes = {}
+    // static defaultProps = {
+    //     contacts: this.props,
+    // }
 
     state = {
         name: '',
@@ -127,3 +129,5 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm)
+
+// export default ContactForm

@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Filter from '../Filter/Filter'
 import phonebookOperations from '../../redux/phonebook/phonebook-operations'
 import { changeFilter } from '../../redux/phonebook/phonebook-actions'
+import phonebookSelectors from '../../redux/phonebook/phonebook-selectors'
 import PropTypes from 'prop-types'
 import styles from './ContactList.module.css'
 import './ContactList.css'
@@ -77,17 +78,17 @@ ContactList.propTypes = {
     resetFilter: PropTypes.func.isRequired,
 }
 
-const filteredElements = (filter, contacts) => {
-    const normalizedFilter = filter.toLowerCase()
-    return contacts.filter((contact) =>
-        contact.name.toLowerCase().includes(normalizedFilter)
-    )
-}
+// const filteredElements = (filter, contacts) => {
+//     const normalizedFilter = filter.toLowerCase()
+//     return contacts.filter((contact) =>
+//         contact.name.toLowerCase().includes(normalizedFilter)
+//     )
+// }
 
-const mapStateToProps = ({ contacts: { filter, items } }) => ({
-    filteredContacts: filteredElements(filter, items),
-    resetFilter: filter,
-    contacts: items,
+const mapStateToProps = (state) => ({
+    filteredContacts: phonebookSelectors.getfilteredElements(state),
+    resetFilter: phonebookSelectors.getFilter(state),
+    contacts: phonebookSelectors.getContacts(state),
 })
 
 const mapDispatchToProps = (dispatch) => ({

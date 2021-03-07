@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group'
 import phonebookOperations from '../src/redux/phonebook/phonebook-operations'
 import ContactForm from './components/Contactform/ContactForm'
 import ContactList from './components/ContactList/ContactList'
+import contactSelectors from './redux/phonebook/phonebook-selectors'
 import Filter from './components/Filter/Filter'
 import styles from './App.module.css'
 import './App.css'
@@ -52,7 +53,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
     contacts: state.contacts.items,
-    isLosdingContats: state.contacts.loading,
+    isLosdingContats: contactSelectors.getLoading(state),
 })
 
 const mapDispatchToProps = (dispatch) => ({

@@ -39,7 +39,7 @@ class App extends Component {
                 >
                     <Filter />
                 </CSSTransition>
-                {this.props.isLosdingContats && <Loader />}
+                {this.props.isLoadingContats && <Loader />}
                 <CSSTransition
                     in={this.props.contacts.length > 0}
                     timeout={250}
@@ -54,7 +54,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
     contacts: state.contacts.items,
-    isLosdingContats: contactSelectors.getLoading(state),
+    isLoadingContats: contactSelectors.getLoading(state),
 })
 
 const mapDispatchToProps = (dispatch) => ({

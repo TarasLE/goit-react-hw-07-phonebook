@@ -24,7 +24,7 @@ class ContactList extends Component {
                 >
                     {filteredContacts.map((contact) => (
                         <CSSTransition
-                            timeout={250}
+                            timeout={750}
                             classNames={{
                                 enter: styles.ContactListItemFadeEnter,
                                 enterActive:

@@ -5,6 +5,7 @@ import phonebookOperations from '../src/redux/phonebook/phonebook-operations'
 import ContactForm from './components/Contactform/ContactForm'
 import ContactList from './components/ContactList/ContactList'
 import contactSelectors from './redux/phonebook/phonebook-selectors'
+import Loader from '../src/components/Loader/Loader'
 import Filter from './components/Filter/Filter'
 import styles from './App.module.css'
 import './App.css'
@@ -38,7 +39,7 @@ class App extends Component {
                 >
                     <Filter />
                 </CSSTransition>
-                {this.props.isLosdingContats && <h1>Loading...</h1>}
+                {this.props.isLosdingContats && <Loader />}
                 <CSSTransition
                     in={this.props.contacts.length > 0}
                     timeout={250}

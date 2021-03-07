@@ -36,9 +36,7 @@ class ContactForm extends Component {
         }
     }
     checkContact = () => {
-        if (this.props.contacts.length == 0) {
-            return
-        } else if (
+        if (
             this.props.contacts.find((contact) => {
                 return (
                     contact.name.toLowerCase() ===
@@ -46,7 +44,9 @@ class ContactForm extends Component {
                     contact.number.toLowerCase() ===
                         this.state.number.toLowerCase()
                 )
-            })
+            }) ||
+            this.state.name == '' ||
+            this.state.number == ''
         ) {
             this.setState({ alert: true })
             this.alertState()
@@ -110,7 +110,10 @@ class ContactForm extends Component {
                     }}
                     unmountOnExit
                 >
-                    <Notification sameContact={this.state.name}></Notification>
+                    <Notification
+                        sameContact={this.state.name}
+                        currentNumber={this.state.number}
+                    ></Notification>
                 </CSSTransition>
             </div>
         )

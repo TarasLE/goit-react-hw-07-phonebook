@@ -2,17 +2,12 @@ import React, { Component } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 import phonebookOperations from '../../redux/phonebook/phonebook-operations'
-import PropTypes from 'prop-types'
 import styles from './ContactForm.module.css'
 import shortid from 'shortid'
 import './ContactForm.css'
 import Notification from '../Notification/Notification'
 
 class ContactForm extends Component {
-    // static defaultProps = {
-    //     contacts: this.props,
-    // }
-
     state = {
         name: '',
         number: '',
@@ -129,5 +124,3 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm)
-
-// export default ContactForm

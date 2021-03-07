@@ -14,11 +14,8 @@ import {
     changeFilter,
 } from './phonebook-actions'
 
-// const { addContactSuccess, addContactRequest, addContactError } = actions
-
 const items = createReducer([], {
     [fetchContactSuccess]: (state, { payload }) => payload,
-    // [actions.addContact]: (state, { payload }) => [...state, payload],
     [addContactSuccess]: (state, { payload }) => [...state, payload],
 
     [deleteContactSuccess]: (state, { payload }) =>

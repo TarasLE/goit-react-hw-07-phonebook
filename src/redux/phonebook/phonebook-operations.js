@@ -21,20 +21,9 @@ const fetchContacts = () => async (dispatch) => {
     } catch (error) {
         dispatch(fetchContactError(error))
     }
-
-    // axios
-    //     .get('/contacts')
-    //     .then(({ data }) => dispatch(fetchContactSuccess(data)))
-    //     .catch((error) =>
-    //         // dispatch({ type: 'contact/addContactError', payload: error })
-    //         dispatch(fetchContactError(error))
-    //     )
 }
 
 const addContact = (contact) => async (dispatch) => {
-    // const newContact = { contact }
-
-    // dispatch({ type: 'contact/addContactRequest' })
     dispatch(addContactRequest())
 
     try {
@@ -43,16 +32,6 @@ const addContact = (contact) => async (dispatch) => {
     } catch (error) {
         dispatch(addContactError(error))
     }
-    // axios
-    //     .post('/contacts', contact)
-    //     .then(({ data }) =>
-    //         // dispatch({ type: 'contact/addContactSuccess', payload: data })
-    //         dispatch(addContactSuccess(data))
-    //     )
-    //     .catch((error) =>
-    //         // dispatch({ type: 'contact/addContactError', payload: error })
-    //         dispatch(addContactError(error))
-    //     )
 }
 
 const deleteContact = (contactId) => async (dispatch) => {
@@ -63,10 +42,6 @@ const deleteContact = (contactId) => async (dispatch) => {
     } catch (error) {
         dispatch(deleteContactError(error))
     }
-    //     axios
-    //         .delete(`/contacts/${contactId}`)
-    //         .then(() => dispatch(deleteContactSuccess(contactId)))
-    //         .catch((error) => dispatch(deleteContactError(error)))
 }
 
 export default { addContact, deleteContact, fetchContacts }
